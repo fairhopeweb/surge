@@ -1,6 +1,6 @@
 package platform
 
-import "github.com/wailsapp/wails"
+import "github.com/wailsapp/wails/v2"
 
 var labelText chan string
 var appearance chan string

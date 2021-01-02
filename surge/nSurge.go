@@ -13,7 +13,7 @@ import (
 
 	bitmap "github.com/boljen/go-bitmap"
 	movavg "github.com/mxmCherry/movavg"
-	"github.com/wailsapp/wails"
+	"github.com/wailsapp/wails/v2"
 )
 
 //FrontendReady is a flag to check if frontend is ready

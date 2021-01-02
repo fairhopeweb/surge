@@ -8,7 +8,7 @@ import (
 	"github.com/leaanthony/mewn"
 	"github.com/rule110-io/surge-ui/surge"
 	"github.com/rule110-io/surge-ui/surge/platform"
-	"github.com/wailsapp/wails"
+	"github.com/wailsapp/wails/v2"
 )
 
 var wailsRuntime *wails.Runtime
@@ -157,15 +157,20 @@ func main() {
 	js := mewn.String("./frontend/dist/app.js")
 	css := mewn.String("./frontend/dist/app.css")
 
-	app := wails.CreateApp(&wails.AppConfig{
+	// Create application with options
+	app, err := wails.CreateAppWithOptions(&options.App{
+		Title:     "Surge",
 		Width:     1144,
 		Height:    790,
-		Resizable: true,
-		Title:     "Surge",
-		JS:        js,
-		CSS:       css,
-		Colour:    "#131313",
+		MinWidth:  1144,
+		MinHeight: 790,
+		//Tray:      menu.NewMenuFromItems(menu.AppMenu()),
+		//Menu:      menu.NewMenuFromItems(menu.AppMenu()),
+		//StartHidden:  true,
+
+		LogLevel: logger.TRACE,
 	})
+
 	app.Bind(stats)
 	app.Bind(getLocalFiles)
 	app.Bind(getRemoteFiles)

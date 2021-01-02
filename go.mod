@@ -10,7 +10,6 @@ require (
 	github.com/golang/protobuf v1.4.2
 	github.com/gotk3/gotk3 v0.4.0 // indirect
 	github.com/leaanthony/mewn v0.10.7
-	github.com/leaanthony/slicer v1.4.1 // indirect
 	github.com/mattn/go-colorable v0.1.7 // indirect
 	github.com/mgutz/ansi v0.0.0-20200706080929-d51e80ef957d // indirect
 	github.com/mxmCherry/movavg v1.1.0
@@ -19,10 +18,10 @@ require (
 	github.com/pkg/errors v0.9.1 // indirect
 	github.com/skratchdot/open-golang v0.0.0-20200116055534-eef842397966
 	github.com/sqweek/dialog v0.0.0-20200601143742-43ea34326190
-	github.com/wailsapp/wails v1.9.1
+	github.com/wailsapp/wails v1.10.1 // indirect
+	github.com/wailsapp/wails/v2 v2.0.0-alpha
 	github.com/xujiajun/nutsdb v0.5.0
 	golang.org/x/image v0.0.0-20200801110659-972c09e46d76 // indirect
-	golang.org/x/net v0.0.0-20200707034311-ab3426394381 // indirect
 	golang.org/x/sys v0.0.0-20200802091954-4b90ce9b60b3
 	google.golang.org/protobuf v1.25.0
 	gopkg.in/AlecAivazis/survey.v1 v1.8.8 // indirect
@@ -30,3 +29,5 @@ require (
 	gopkg.in/toast.v1 v1.0.0-20180812000517-0a84660828b2
 	gopkg.in/yaml.v3 v3.0.0-20200615113413-eeeca48fe776 // indirect
 )
+
+replace github.com/wailsapp/wails/v2 v2.0.0-alpha => /Users/christian/go-projects/src/github.com/wailsapp/wails/v2
