@@ -5,10 +5,11 @@ import (
 
 	"log"
 
-	"github.com/leaanthony/mewn"
 	"github.com/rule110-io/surge-ui/surge"
 	"github.com/rule110-io/surge-ui/surge/platform"
 	"github.com/wailsapp/wails/v2"
+	"github.com/wailsapp/wails/v2/pkg/logger"
+	"github.com/wailsapp/wails/v2/pkg/options"
 )
 
 var wailsRuntime *wails.Runtime
@@ -93,7 +94,6 @@ func startDownloadMagnetLinks(Magnetlinks string) bool {
 
 // Stats .
 type Stats struct {
-	log *wails.CustomLogger
 }
 
 // WailsInit .
@@ -153,9 +153,6 @@ func main() {
 	}
 
 	surge.Start(arguments)
-
-	js := mewn.String("./frontend/dist/app.js")
-	css := mewn.String("./frontend/dist/app.css")
 
 	// Create application with options
 	app, err := wails.CreateAppWithOptions(&options.App{

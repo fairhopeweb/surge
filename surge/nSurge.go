@@ -14,6 +14,7 @@ import (
 	bitmap "github.com/boljen/go-bitmap"
 	movavg "github.com/mxmCherry/movavg"
 	"github.com/wailsapp/wails/v2"
+	"github.com/wailsapp/wails/v2/pkg/logger"
 )
 
 //FrontendReady is a flag to check if frontend is ready
@@ -358,7 +359,7 @@ func getFileSize(path string) (size int64) {
 
 // Stats .
 type Stats struct {
-	log *wails.CustomLogger
+	log logger.Logger
 }
 
 func getListedFileByHash(Hash string) *File {
