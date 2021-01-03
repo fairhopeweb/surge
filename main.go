@@ -98,7 +98,6 @@ type Stats struct {
 
 // WailsInit .
 func (s *Stats) WailsInit(runtime *wails.Runtime) error {
-	s.log = runtime.Log.New("Stats")
 	go surge.WailsBind(runtime)
 
 	return nil
