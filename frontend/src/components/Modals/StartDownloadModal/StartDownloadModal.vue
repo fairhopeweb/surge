@@ -1,9 +1,7 @@
 <template>
   <div :class="['modal__wrapper', open ? 'modal__wrapper_open' : null]">
     <div class="modal">
-      <h2 class="modal__title">
-        Start download
-      </h2>
+      <h2 class="modal__title">Start download</h2>
       <p class="modal__descr">
         Hey, you are going to start downloading the following surge links:
         {{ links }}
@@ -42,7 +40,7 @@ export default {
     startDownloadMagnetLinks() {
       const links = this.links;
 
-      window.backend.startDownloadMagnetLinks(links).then(() => {
+      window.backend.SurgeFunctions.startDownloadMagnetLinks(links).then(() => {
         this.$store.dispatch("files/fetchLocalFiles");
         this.$store.dispatch("files/fetchRemoteFiles");
         this.closeModal();

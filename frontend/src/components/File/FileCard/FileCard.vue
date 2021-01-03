@@ -54,7 +54,7 @@ export default {
   methods: {
     openFile(file) {
       const { FileHash } = file;
-      window.backend.openFile(FileHash).then(() => {});
+      window.backend.SurgeFunctions.openFile(FileHash).then(() => {});
     },
     getRandomColor() {
       const colors = this.colors;

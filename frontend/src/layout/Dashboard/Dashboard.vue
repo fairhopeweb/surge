@@ -53,7 +53,7 @@ export default {
   },
   methods: {
     getPublicKey() {
-      window.backend.getPublicKey().then((address) => {
+      window.backend.SurgeFunctions.getPublicKey().then((address) => {
         this.$store.commit("pubKey/setPubKey", address);
       });
     },
@@ -64,12 +64,12 @@ export default {
       this.$store.dispatch("files/fetchRemoteFiles");
     },
     fetchDarkTheme() {
-      window.backend.readSetting("DarkMode").then((bool) => {
+      window.backend.SurgeFunctions.readSetting("DarkMode").then((bool) => {
         this.$store.commit("darkTheme/setDarkTheme", bool);
       });
     },
     fetchTour() {
-      window.backend.readSetting("Tour").then((bool) => {
+      window.backend.SurgeFunctions.readSetting("Tour").then((bool) => {
         this.$store.commit("tour/setTour", bool);
       });
     },

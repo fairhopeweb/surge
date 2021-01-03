@@ -92,12 +92,12 @@ export default {
   },
   methods: {
     pause(hash) {
-      window.backend.setDownloadPause(hash, true).then(() => {
+      window.backend.SurgeFunctions.setDownloadPause(hash, true).then(() => {
         this.$store.dispatch("files/fetchLocalFiles");
       });
     },
     continueDownload(hash) {
-      window.backend.setDownloadPause(hash, false).then(() => {
+      window.backend.SurgeFunctions.setDownloadPause(hash, false).then(() => {
         this.$store.dispatch("files/fetchLocalFiles");
       });
     },

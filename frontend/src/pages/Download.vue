@@ -4,35 +4,33 @@
       <h1 class="page__title">File Transfers</h1>
       <div class="table">
         <div class="table__row">
-          <div class="table__head" style="width: calc(100% - 666px);">
-            File
-          </div>
+          <div class="table__head" style="width: calc(100% - 666px)">File</div>
           <div
             class="table__head"
-            style="width: 110px; justify-content: center;"
+            style="width: 110px; justify-content: center"
           >
             Down
           </div>
           <div
             class="table__head"
-            style="width: 110px; justify-content: center;"
+            style="width: 110px; justify-content: center"
           >
             Up
           </div>
           <div
             class="table__head"
-            style="width: 176px; justify-content: center;"
+            style="width: 176px; justify-content: center"
           >
             Status
           </div>
           <div
             class="table__head"
-            style="width: 120px; justify-content: center;"
+            style="width: 120px; justify-content: center"
           >
             Remaining
           </div>
-          <div class="table__head" style="width: 70px;">Seeds</div>
-          <div class="table__head" style="width: 80px;"></div>
+          <div class="table__head" style="width: 70px">Seeds</div>
+          <div class="table__head" style="width: 80px"></div>
         </div>
         <TablePlaceholder v-if="!localFiles.length" type="transfer" />
         <template v-else>
@@ -43,40 +41,40 @@
           >
             <div
               class="table__cell text_wrap_none"
-              style="width: calc(100% - 666px);"
+              style="width: calc(100% - 666px)"
             >
               <FileInfo :file="file" />
             </div>
             <div
               class="table__cell"
-              style="width: 110px; justify-content: center;"
+              style="width: 110px; justify-content: center"
             >
               <FileDown :file="file" />
             </div>
             <div
               class="table__cell"
-              style="width: 110px; justify-content: center;"
+              style="width: 110px; justify-content: center"
             >
               <FileUp :file="file" />
             </div>
             <div
               class="table__cell"
-              style="width: 176px; justify-content: center;"
+              style="width: 176px; justify-content: center"
             >
               <FileChunks :file="file" />
             </div>
             <div
               class="table__cell"
-              style="width: 120px; justify-content: center;"
+              style="width: 120px; justify-content: center"
             >
               <FileTime :file="file" />
             </div>
-            <div class="table__cell" style="width: 70px;">
+            <div class="table__cell" style="width: 70px">
               {{ file.SeederCount }}
             </div>
             <div
               class="table__cell"
-              style="width: 80px; justify-content: flex-end;"
+              style="width: 80px; justify-content: flex-end"
             >
               <feather
                 class="table__action table__action_remove"
@@ -152,7 +150,7 @@ export default {
       this.toggleRemoveFileModal(true);
     },
     openFolder(FileHash) {
-      window.backend.openFolder(FileHash).then(() => {});
+      window.backend.SurgeFunctions.openFolder(FileHash).then(() => {});
     },
   },
 };
