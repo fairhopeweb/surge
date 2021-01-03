@@ -53,7 +53,7 @@ func (s *SurgeFunctions) OpenFolder(Hash string) {
 	surge.OpenFolderByHash(Hash)
 }
 
-func (s *SurgeFunctions) seedFile() bool {
+func (s *SurgeFunctions) SeedFile() bool {
 	path := platform.OpenFileDialog()
 	if path == "" {
 		return false

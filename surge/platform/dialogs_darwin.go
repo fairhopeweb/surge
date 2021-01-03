@@ -1,19 +1,14 @@
 package platform
 
 import (
-	"io/ioutil"
-
 	"github.com/wailsapp/wails/v2/pkg/options"
 )
 
 //OpenFileDialog uses platform agnostic package for a file dialog
 func OpenFileDialog() string {
 	selectedFile := wailsRuntime.Dialog.Open(&options.OpenDialog{
-		DefaultDirectory:           "",
-		DefaultFilename:            "",
-		Title:                      "",
-		Filters:                    "",
-		AllowFiles:                 false,
+		Title:                      "Choose a file to add to surge",
+		AllowFiles:                 true,
 		AllowDirectories:           false,
 		AllowMultiple:              false,
 		ShowHiddenFiles:            false,
@@ -27,11 +22,5 @@ func OpenFileDialog() string {
 		return ""
 	}
 
-	// Load notes
-	noteData, err := ioutil.ReadFile(selectedFile[0])
-	if err != nil {
-		return ""
-	}
-
-	return string(noteData)
+	return string(selectedFile[0])
 }

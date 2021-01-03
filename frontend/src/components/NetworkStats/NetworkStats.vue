@@ -45,7 +45,7 @@ export default {
   },
   methods: {
     seedFile() {
-      window.backend.main.SurgeFunctions.seedFile().then(() => {
+      window.backend.main.SurgeFunctions.SeedFile().then(() => {
         this.$store.dispatch("files/fetchLocalFiles");
         this.$store.dispatch("files/fetchRemoteFiles");
         this.$router.replace("/download");
