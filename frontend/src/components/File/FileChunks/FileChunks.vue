@@ -81,7 +81,7 @@ export default {
   },
   methods: {
     getChunkMap() {
-      window.backend.SurgeFunctions.getFileChunkMap(
+      window.backend.main.SurgeFunctions.GetFileChunkMap(
         this.file.FileHash,
         156
       ).then((bits) => {

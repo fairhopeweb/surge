@@ -155,7 +155,7 @@ export default {
   },
   methods: {
     download(hash) {
-      window.backend.SurgeFunctions.downloadFile(hash).then(() => {
+      window.backend.main.SurgeFunctions.DownloadFile(hash).then(() => {
         this.$store.dispatch("files/fetchLocalFiles");
         this.$store.dispatch("files/fetchRemoteFiles");
       });

@@ -40,12 +40,14 @@ export default {
     startDownloadMagnetLinks() {
       const links = this.links;
 
-      window.backend.SurgeFunctions.startDownloadMagnetLinks(links).then(() => {
-        this.$store.dispatch("files/fetchLocalFiles");
-        this.$store.dispatch("files/fetchRemoteFiles");
-        this.closeModal();
-        this.$router.replace("/download");
-      });
+      window.backend.main.SurgeFunctions.StartDownloadMagnetLinks(links).then(
+        () => {
+          this.$store.dispatch("files/fetchLocalFiles");
+          this.$store.dispatch("files/fetchRemoteFiles");
+          this.closeModal();
+          this.$router.replace("/download");
+        }
+      );
     },
     initDownloadEvent() {
       window.wails.Events.On("userEvent", (context, payload) => {

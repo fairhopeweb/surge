@@ -47,15 +47,15 @@ const actions = {
   fetchLocalFiles({ commit, state }) {
     const { skip, get } = state.localFilesConfig;
 
-    window.backend.SurgeFunctions.getLocalFiles("", "FileName", true, skip, get).then(({ Result, Count }) => {
+    window.backend.main.SurgeFunctions.GetLocalFiles("", "FileName", true, skip, get).then(({ Result, Count }) => {
       commit("setLocalFiles", { Result, Count });
     });
   },
   fetchRemoteFiles({ commit, state }) {
     const { search, skip, get, orderBy, isDesc } = state.remoteFilesConfig;
 
-    window.backend
-      .getRemoteFiles(search, orderBy, isDesc, skip, get)
+    window.backend.main.SurgeFunctions
+      .GetRemoteFiles(search, orderBy, isDesc, skip, get)
       .then(({ Result, Count }) => {
         commit("setRemoteFiles", { Result, Count });
       });

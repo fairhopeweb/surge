@@ -150,7 +150,7 @@ export default {
       this.toggleRemoveFileModal(true);
     },
     openFolder(FileHash) {
-      window.backend.SurgeFunctions.openFolder(FileHash).then(() => {});
+      window.backend.main.SurgeFunctions.OpenFolder(FileHash).then(() => {});
     },
   },
 };

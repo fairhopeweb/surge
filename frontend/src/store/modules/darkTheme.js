@@ -21,7 +21,7 @@ const mutations = {
 const actions = {
   toggleDarkTheme({ commit, state }) {
     const bool = (!state.darkTheme).toString();
-    window.backend.SurgeFunctions.writeSetting("DarkMode", bool).then(() => {
+    window.backend.main.SurgeFunctions.WriteSetting("DarkMode", bool).then(() => {
       commit("setDarkTheme", bool);
     });
   },

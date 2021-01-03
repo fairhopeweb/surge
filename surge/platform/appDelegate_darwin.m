@@ -1,40 +1,5 @@
 #include "appDelegate_darwin.h"
 
-@interface AppDelegate ()
-
-@end
-
-@implementation AppDelegate
-
--(BOOL)application:(NSApplication *)sender openFile:(NSString *)filename
-{
-   YES;
-}
- 
--(void)application:(NSApplication *)sender openFiles:(NSArray *)filenames
-{
-   NSLog(@"%@", filenames);
-}
-
-- (void)applicationDidFinishLaunching:(NSNotification *)aNotification
-{
-    [[NSUserNotificationCenter defaultUserNotificationCenter] setDelegate:self];
-}
-
-
-- (void)applicationWillTerminate:(NSNotification *)aNotification {
-    // Insert code here to tear down your application
-}
-
-- (BOOL)userNotificationCenter:(NSUserNotificationCenter *)center shouldPresentNotification:(NSUserNotification *)notification{
-    return YES;
-}
-
-
-
-
-@end
-
 @interface Document ()
 
 @end

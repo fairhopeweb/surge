@@ -46,14 +46,14 @@ export default {
 
     this.updateRemoteVersion();
 
-    this.getPublicKey();
+    this.GetPublicKey();
 
     this.remoteInterval = setInterval(this.fetchRemoteFiles, 10000);
     this.localInterval = setInterval(this.fetchLocalFiles, 10000);
   },
   methods: {
-    getPublicKey() {
-      window.backend.SurgeFunctions.getPublicKey().then((address) => {
+    GetPublicKey() {
+      window.backend.main.SurgeFunctions.GetPublicKey().then((address) => {
         this.$store.commit("pubKey/setPubKey", address);
       });
     },
@@ -64,12 +64,14 @@ export default {
       this.$store.dispatch("files/fetchRemoteFiles");
     },
     fetchDarkTheme() {
-      window.backend.SurgeFunctions.readSetting("DarkMode").then((bool) => {
-        this.$store.commit("darkTheme/setDarkTheme", bool);
-      });
+      window.backend.main.SurgeFunctions.ReadSetting("DarkMode").then(
+        (bool) => {
+          this.$store.commit("darkTheme/setDarkTheme", bool);
+        }
+      );
     },
     fetchTour() {
-      window.backend.SurgeFunctions.readSetting("Tour").then((bool) => {
+      window.backend.main.SurgeFunctions.ReadSetting("Tour").then((bool) => {
         this.$store.commit("tour/setTour", bool);
       });
     },

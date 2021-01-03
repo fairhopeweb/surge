@@ -64,7 +64,7 @@ export default {
       this.$emit("toggleRemoveFileModal", false);
     },
     removeFile() {
-      window.backend.SurgeFunctions.removeFile(
+      window.backend.main.SurgeFunctions.RemoveFile(
         this.file.FileHash,
         this.fromDisk
       ).then(() => {

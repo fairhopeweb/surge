@@ -92,14 +92,18 @@ export default {
   },
   methods: {
     pause(hash) {
-      window.backend.SurgeFunctions.setDownloadPause(hash, true).then(() => {
-        this.$store.dispatch("files/fetchLocalFiles");
-      });
+      window.backend.main.SurgeFunctions.SetDownloadPause(hash, true).then(
+        () => {
+          this.$store.dispatch("files/fetchLocalFiles");
+        }
+      );
     },
     continueDownload(hash) {
-      window.backend.SurgeFunctions.setDownloadPause(hash, false).then(() => {
-        this.$store.dispatch("files/fetchLocalFiles");
-      });
+      window.backend.main.SurgeFunctions.SetDownloadPause(hash, false).then(
+        () => {
+          this.$store.dispatch("files/fetchLocalFiles");
+        }
+      );
     },
   },
 };

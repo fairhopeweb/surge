@@ -14,7 +14,7 @@ const mutations = {
 
 const actions = {
   offTour({ commit }) {
-    window.backend.SurgeFunctions.writeSetting("Tour", "false").then(() => {
+    window.backend.main.SurgeFunctions.WriteSetting("Tour", "false").then(() => {
       commit("setTour", "false");
     });
   },
