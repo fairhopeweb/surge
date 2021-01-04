@@ -10,6 +10,7 @@ import (
 	"github.com/wailsapp/wails/v2"
 	"github.com/wailsapp/wails/v2/pkg/logger"
 	"github.com/wailsapp/wails/v2/pkg/options"
+	"github.com/wailsapp/wails/v2/pkg/options/mac"
 )
 
 var wailsRuntime *wails.Runtime
@@ -92,6 +93,17 @@ func main() {
 		//Tray:      menu.NewMenuFromItems(menu.AppMenu()),
 		//Menu:      menu.NewMenuFromItems(menu.AppMenu()),
 		//StartHidden:  true,
+		Mac: &mac.Options{
+			WebviewIsTransparent:          true,
+			WindowBackgroundIsTranslucent: true,
+			// Comment out line below to see Window.SetTitle() work
+			TitleBar: mac.TitleBarHiddenInset(),
+			//Menu:     createApplicationMenu(),
+			//Tray: &menu.TrayOptions{
+			//	Icon: "light",
+			//	Menu: createApplicationTray(),
+			//},
+		},
 
 		LogLevel: logger.TRACE,
 	})

@@ -6,7 +6,7 @@
     "email": "kontakt@christian-busch.com"
   },
   "version": "0.3.0-beta",
-  "binaryname": "surge", //test
+  "binaryname": "surge",
   "frontend": {
     "dir": "frontend",
     "install": "npm install",
